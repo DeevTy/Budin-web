@@ -1,0 +1,105 @@
+body {
+  font-family: 'Quicksand', Arial, sans-serif;
+  background: #f8f6fa;
+  color: #444;
+  margin: 0;
+  padding: 0;
+}
+header {
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  background: #fff0f6;
+}
+.logo {
+  width: 90px;
+  margin-bottom: 0.5rem;
+}
+h1 {
+  font-size: 2.5rem;
+  color: #b48ecb;
+  margin: 0;
+}
+.descripcion {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 1rem 0;
+}
+.galeria {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.galeria img {
+  width: 220px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px #e0c3fc55;
+}
+.precios {
+  background: #e0c3fc22;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 16px;
+  max-width: 400px;
+  box-shadow: 0 2px 8px #b48ecb33;
+}
+.precios h2 {
+  color: #b48ecb;
+  margin-bottom: 1rem;
+}
+.precios ul {
+  list-style: none;
+  padding: 0;
+}
+.precios li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.7rem;
+  font-size: 1.1rem;
+}
+.pedido {
+  text-align: center;
+  margin: 2rem 0;
+}
+.whatsapp-btn {
+  background: #ffe0f0;
+  color: #b48ecb;
+  padding: 1rem 2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2rem;
+  box-shadow: 0 2px 8px #b48ecb33;
+  transition: background 0.2s;
+}
+.whatsapp-btn:hover {
+  background: #b48ecb;
+  color: #fff;
+}
+footer {
+  text-align: center;
+  padding: 1rem 0;
+  background: #fff0f6;
+  color: #b48ecb;
+  font-size: 1rem;
+}
+footer a {
+  color: #b48ecb;
+  text-decoration: underline;
+}
+@media (max-width: 600px) {
+  .galeria {
+    flex-direction: column;
+    align-items: center;
+  }
+  .galeria img {
+    width: 90vw;
+    height: 40vw;
+  }
+  .precios {
+    max-width: 95vw;
+  }
+} 
