@@ -5,37 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Moon Budinería</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header>
-    <img src="img/logo.png" alt="Moon Budinería" class="logo">
-    <h1>Moon Budinería</h1>
+    <div class="header-content header-flex">
+      <img src="img/logo.png" alt="Moon Budinería" class="logo">
+      <div class="header-text">
+        <h1>Moon Budinería</h1>
+        <p class="slogan">Budines artesanales, frescos y deliciosos</p>
+      </div>
+      <button id="darkModeToggle" class="dark-mode-btn" aria-label="Alternar modo oscuro">🌙</button>
+    </div>
   </header>
-  <section class="descripcion">
-    <p>Budines artesanales, frescos y deliciosos. ¡Hacé tu pedido y disfrutá el sabor casero!</p>
+  <section class="sobre">
+    <h2>Sobre Moon Budinería</h2>
+    <p>Somos un emprendimiento familiar dedicado a la elaboración de budines artesanales, usando ingredientes frescos y recetas caseras. Nuestro objetivo es que disfrutes el sabor y la calidez de lo hecho en casa, con presentaciones cuidadas y mucho amor en cada detalle.</p>
   </section>
+  <hr>
   <section class="galeria">
-    <!-- Galería de imágenes de budines -->
-    <img src="img/budin1.jpg" alt="Budín clásico">
-    <img src="img/budin2.jpg" alt="Budín con nuez">
-    <img src="img/budin3.jpg" alt="Budín de chocolate">
-    <img src="img/budin4.jpg" alt="Budín choco-oreo">
+    <div class="galeria-item">
+      <img src="img/budin1.jpg" alt="Budín de Naranja">
+      <h3>Budín de Naranja</h3>
+      <p>Budín artesanal de naranja, esponjoso y con un toque cítrico natural. ¡Ideal para regalar!</p>
+      <a href="https://wa.me/541122733202" target="_blank" class="pedido-btn"><i class="fab fa-whatsapp"></i> Pedir</a>
+    </div>
+    <div class="galeria-item">
+      <img src="img/budin2.jpg" alt="Budín Choco-Oreo">
+      <h3>Budín Choco-Oreo</h3>
+      <p>Budín de chocolate con trozos de Oreo y un toque de dulce de leche. ¡Irresistible!</p>
+      <a href="https://wa.me/541122733202" target="_blank" class="pedido-btn"><i class="fab fa-whatsapp"></i> Pedir</a>
+    </div>
+    <div class="galeria-item">
+      <img src="img/budin3.jpg" alt="Budín de Limón">
+      <h3>Budín de Limón</h3>
+      <p>El clásico de siempre, con sabor a limón fresco y cobertura de azúcar impalpable.</p>
+      <a href="https://wa.me/541122733202" target="_blank" class="pedido-btn"><i class="fab fa-whatsapp"></i> Pedir</a>
+    </div>
   </section>
+  <hr>
   <section class="precios">
     <h2>Lista de Precios</h2>
     <ul>
-      <li>Budín de Limón <span>$3500</span></li>
-      <li>Budín de Naranja <span>$3500</span></li>
-      <li>Budín de Chocolate <span>$4500</span></li>
-      <li>Budín de Naranja o Limón c/Nuez <span>$5500</span></li>
-      <li>Budín de Choco-Oreo <span>$6000</span></li>
+      <li><i class="fa-solid fa-lemon"></i> Budín de Limón <span>$3500</span></li>
+      <li><i class="fa-solid fa-lemon"></i> Budín de Naranja <span>$3500</span></li>
+      <li><i class="fa-solid fa-chocolate-bar"></i> Budín de Chocolate <span>$4500</span></li>
+      <li><i class="fa-solid fa-walnut"></i> Budín de Naranja o Limón c/Nuez <span>$5500</span></li>
+      <li><i class="fa-solid fa-cookie"></i> Budín de Choco-Oreo <span>$6000</span></li>
     </ul>
   </section>
-  <section class="pedido">
-    <a href="https://wa.me/541122733202" target="_blank" class="whatsapp-btn">¡Hacé tu pedido por WhatsApp!</a>
+  <section class="pedido-central">
+    <a href="https://wa.me/541122733202" target="_blank" class="whatsapp-btn-central"><i class="fab fa-whatsapp"></i> ¡Hacé tu pedido por WhatsApp!</a>
   </section>
   <footer>
-    <p>Seguinos en Instagram: <a href="https://instagram.com/moon_budineria" target="_blank">@moon_budineria</a></p>
+    <div class="footer-content">
+      <p>Seguinos en:</p>
+      <a href="https://instagram.com/moon_budineria" target="_blank" class="footer-icon"><i class="fab fa-instagram"></i></a>
+      <a href="https://wa.me/541122733202" target="_blank" class="footer-icon"><i class="fab fa-whatsapp"></i></a>
+      <p class="footer-copy">&copy; 2025 Moon Budinería</p>
+    </div>
   </footer>
+  <script>
+// Dark mode toggle
+const toggleBtn = document.getElementById('darkModeToggle');
+const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+  document.body.classList.add('dark-mode');
+  toggleBtn.textContent = '☀️';
+}
+toggleBtn.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  const isDark = document.body.classList.contains('dark-mode');
+  toggleBtn.textContent = isDark ? '☀️' : '🌙';
+  localStorage.setItem('theme', isDark ? 'dark' : 'light');
+});
+</script>
 </body>
 </html> 
